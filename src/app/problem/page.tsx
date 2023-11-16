@@ -7,8 +7,18 @@ import ComentCard from "./components/ComentCard";
 import AddSolutionCard from "./components/AddSolution";
 import SolutionCard from "./components/SolutionCard";
 import { Icon } from "@iconify/react/dist/iconify.js";
+import WriteComentCard from "./components/WriteComent";
+import React from "react";
 
 export default function Problem() {
+  const [showWriteComent, setshowWriteComent] = React.useState(false);
+  const [showAddComent, setshowAddComent] = React.useState(true);
+
+  const switchComponent = () => {
+    setshowWriteComent(!showWriteComent);
+    setshowAddComent(!showAddComent);
+  };
+
   const comments = [
     {
       name: "Barbara Coelho",
@@ -39,6 +49,48 @@ export default function Problem() {
       ammount: 2000,
       votes: 9,
       voted: false,
+    },
+  ];
+
+  const actions: IProblem[] = [
+    {
+      img: "https://jpeg.org/images/jpeg-home.jpg",
+      title: "Action",
+      author: "Barbara",
+      description: "Uma pequena descrição",
+      address: {
+        uf: "pe",
+        city: "recife",
+        neighborhood: "Pina",
+      },
+      pix: "email",
+      deadline: "2023-11-23",
+    },
+    {
+      img: "https://jpeg.org/images/jpeg-home.jpg",
+      title: "Action",
+      author: "Barbara",
+      description: "Uma pequena descrição",
+      address: {
+        uf: "pe",
+        city: "recife",
+        neighborhood: "Pina",
+      },
+      pix: "email",
+      deadline: "2023-11-23",
+    },
+    {
+      img: "https://jpeg.org/images/jpeg-home.jpg",
+      title: "Action",
+      author: "Barbara",
+      description: "Uma pequena descrição",
+      address: {
+        uf: "pe",
+        city: "recife",
+        neighborhood: "Pina",
+      },
+      pix: "email",
+      deadline: "2023-11-23",
     },
   ];
 
@@ -96,10 +148,15 @@ export default function Problem() {
           <p className="text-sm pt-4 pb-8">
             *Você pode votar até às 23h59 do dia 00/00/0000
           </p>
-          <AddComentCard
-            avatar={avatar}
-            placeholder="Adicione um comentário..."
-          />
+          {showAddComent && (
+            <AddComentCard
+              avatar={avatar}
+              placeholder="Adicione um comentário..."
+              onClick={switchComponent}
+            />
+          )}
+          {showWriteComent && <WriteComentCard avatar={avatar} />}
+
           {comments.map((commentdb, index) => {
             return (
               <ComentCard
