@@ -3,7 +3,6 @@
 import { Icon } from "@iconify/react/dist/iconify.js";
 
 type MostVotedSolutionCardProps = {
-  className: string;
   ammount: number;
   votes: number;
   label: string;
@@ -11,7 +10,6 @@ type MostVotedSolutionCardProps = {
 };
 
 const MostVotedSolutionCard = ({
-  className,
   label,
   description,
   ammount,
@@ -22,7 +20,7 @@ const MostVotedSolutionCard = ({
   const defaultTextAreaClasses = "leading-0 w-full pb-4";
 
   return (
-    <div className={`${defaultCardClasses}  ${className}`}>
+    <div className={`${defaultCardClasses}`}>
       <label className="font-bold pb-2">{label}</label>
       <p className={`${defaultTextAreaClasses}`}>{description}</p>
       <div className="flex flex-col justify-between items-center">
