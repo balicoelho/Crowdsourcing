@@ -18,9 +18,7 @@ const CommentButtons = ({
 
   return (
     <div className="flex gap-4">
-      <button className="font-extrabold  text-xs" {...props}>
-        Cancelar
-      </button>
+      <button className="font-extrabold  text-xs">Cancelar</button>
       <Button
         variant="primary"
         className="px-4 py-2 rounded-[0.625rem] text-xs"

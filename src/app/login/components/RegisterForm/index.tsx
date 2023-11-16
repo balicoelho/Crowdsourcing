@@ -43,11 +43,12 @@ const RegisterForm = ({ handleSetAction }: RegisterFormProps) => {
 
   const steps = [
     <FirstStep
+      key={1}
       handleNextStep={handleNextStep}
       handleChangeState={handleChangeState}
       state={state}
     />,
-    <SecondStep state={state} handleChangeState={handleChangeState} />,
+    <SecondStep key={2} state={state} handleChangeState={handleChangeState} />,
   ];
   return (
     <Card className="border-[#121212]">

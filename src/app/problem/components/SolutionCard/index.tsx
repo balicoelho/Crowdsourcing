@@ -1,6 +1,7 @@
 "use client";
 
 import Button from "@/components/Button";
+type ButtonVariants = "primary" | "secondary";
 
 type SolutioCardProps = {
   className: string;
@@ -10,7 +11,7 @@ type SolutioCardProps = {
   description: string;
   buttonText: string;
   iconLeft: string;
-  variant: string;
+  variant: ButtonVariants;
 };
 
 const SolutionCard = ({

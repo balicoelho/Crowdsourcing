@@ -7,7 +7,7 @@ import { twMerge } from "tailwind-merge";
 import CommentButtons from "../CommentButtons";
 
 type WriteComentProps = {
-  avatar?: string;
+  avatar?: any;
   className?: string;
 } & React.TextareaHTMLAttributes<HTMLTextAreaElement>;
 

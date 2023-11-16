@@ -4,7 +4,7 @@ import Avatar from "@/components/Avatar";
 import { twMerge } from "tailwind-merge";
 
 type ComentProps = {
-  avatar: string;
+  avatar: any;
   className: string;
   name: string;
   when: string;

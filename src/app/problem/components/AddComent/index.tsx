@@ -4,7 +4,7 @@ import Avatar from "@/components/Avatar";
 import { twMerge } from "tailwind-merge";
 
 type AddComentProps = {
-  avatar?: string;
+  avatar?: any;
   placeholder: string;
   className?: string;
 } & React.TextareaHTMLAttributes<HTMLTextAreaElement>;
