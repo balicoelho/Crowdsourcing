@@ -4,6 +4,7 @@ import Avatar from "@/components/Avatar";
 import Button from "@/components/Button";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { twMerge } from "tailwind-merge";
+import CommentButtons from "../CommentButtons";
 
 type WriteComentProps = {
   avatar?: string;
@@ -34,15 +35,7 @@ const WriteComentCard = ({ avatar, className, ...props }: WriteComentProps) => {
               <Icon icon="uil:image-plus" />
             </a>
           </div>
-          <div className="flex gap-4">
-            <button className="font-extrabold  text-xs">Cancelar</button>
-            <Button
-              variant="primary"
-              className="px-4 py-2 rounded-[0.625rem] text-xs"
-            >
-              Comentar
-            </Button>
-          </div>
+          <CommentButtons>Comentar</CommentButtons>
         </div>
       </div>
     </div>

@@ -9,14 +9,23 @@ import SolutionCard from "./components/SolutionCard";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import WriteComentCard from "./components/WriteComent";
 import React from "react";
+import WriteSolutionCard from "./components/WriteSolution";
 
 export default function Problem() {
   const [showWriteComent, setshowWriteComent] = React.useState(false);
   const [showAddComent, setshowAddComent] = React.useState(true);
 
-  const switchComponent = () => {
+  const switchComponentComment = () => {
     setshowWriteComent(!showWriteComent);
     setshowAddComent(!showAddComent);
+  };
+
+  const [showWriteSolution, setshowWriteSolution] = React.useState(false);
+  const [showAddSolution, setshowAddSolution] = React.useState(true);
+
+  const switchComponentSolution = () => {
+    setshowWriteSolution(!showWriteSolution);
+    setshowAddSolution(!showAddSolution);
   };
 
   const comments = [
@@ -122,7 +131,21 @@ export default function Problem() {
             eos possimus saepe ex eligendi rerum ea dignissimos dicta sed atque
             suscipit aut architecto sequi.
           </p>
-          <AddSolutionCard className="mb-6" />
+
+          {showAddSolution && (
+            <AddSolutionCard
+              className="mb-6"
+              placeholder="Adicione o título..."
+              onClick={switchComponentSolution}
+            />
+          )}
+          {showWriteSolution && (
+            <WriteSolutionCard
+              className="mb-6"
+              placeholder="Adicione o título..."
+            />
+          )}
+
           {solutions.map((solution, index) => {
             return (
               <SolutionCard
@@ -152,7 +175,7 @@ export default function Problem() {
             <AddComentCard
               avatar={avatar}
               placeholder="Adicione um comentário..."
-              onClick={switchComponent}
+              onClick={switchComponentComment}
             />
           )}
           {showWriteComent && <WriteComentCard avatar={avatar} />}
